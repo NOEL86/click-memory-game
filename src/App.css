@@ -2,20 +2,36 @@
   text-align: center;
 }
 
+.navbar {
+  margin-bottom: 0 !important;
+}
+
 #disneyLogo {
-  width: 5%;
-  display: inline;
+  
+  display: block;
+  text-align: center;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-image: url('https://i.pinimg.com/originals/3d/01/41/3d0141a9eccb1145c72ea23aa1fa43ae.png');
+  background-repeat: no-repeat;
+  background-size: 18%;
+  background-position: center;
+  background-color: rgba(34, 34, 34, 0.774);
+  /* height: 100%; */
   color: white;
+  text-shadow: 2px 2px black;
+  display: block;
+  font-family: 'Yatra One', cursive;
+  font-size: 24px;
+  min-height: 400px;
+  padding: 180px 20px;
+  padding-bottom: 140px;
 }
 
 .App-title {
   font-size: 1.5em;
+  display: inline-block;
 }
 
 .App-intro {

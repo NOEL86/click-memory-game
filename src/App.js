@@ -28,7 +28,6 @@ class App extends Component {
         </nav>
         <div className="App">
           <header className="App-header">
-            <img id="disneyLogo" src="https://i.pinimg.com/originals/3d/01/41/3d0141a9eccb1145c72ea23aa1fa43ae.png" alt="Disney D" />
             <h1 className="App-title">Let's Play the Disney Villain Clicky Game!</h1>
           </header>
 
