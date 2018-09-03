@@ -2,7 +2,7 @@ import React from "react";
 import "./villainCard.css";
 
 const villainCard = props => (
-    <div className="card">
+    <div className="clickItem">
         <div className="img-container">
             <img alt={props.name} src={props.image} />
         </div>
