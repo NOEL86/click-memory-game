@@ -33,9 +33,9 @@ class App extends Component {
             <h1 className="App-title">Let's Play the Disney Villain Clicky Game!</h1>
           </header>
 
-          <div className="row">
+          <div id="body" className="row">
 
-            <div className="col-md-3">
+            <div className="col-md-12">
               {this.state.villains.map(villains => {
                 return <VillainCard
                   id={villains.id}
