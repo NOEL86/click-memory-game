@@ -1,23 +1,18 @@
 import React from "react";
 import "./villainCard.css";
 
-const villainCard = props => {
+const VillainCard = props => {
 
     return (
-
-        <div className="img-container">
-
-
-            <div className="row">
-                {this.state.images.map((item, i) => {
-                    return <villainCard key={item.id} id={item.id} image={item.image} handleClick={this.handleClick} />
-                })}
-
+        <div className="card">
+            <div className="card-image">
+                <img alt={props.name} src={props.image} />
             </div>
+
+            <span onClick={() => props.shuffleVillains(props.id)}
+            className="shuffle"></span>
         </div>
-
-
-    );
+)
 };
 
-export default villainCard;
+export default VillainCard;

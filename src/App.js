@@ -2,22 +2,30 @@ import React, { Component } from 'react';
 import Game from "./components/Game";
 import Scores from './components/Scores';
 import './App.css';
-import villainCard from './components/villainCard'
-import './components/villainCard/villainCard.css'
-import images from "./img.json"
+import VillainCard from './components/villainCard';
+import villains from "./Villains.json";
 
 
 class App extends Component {
 
+  state = {
+    score: 0,
+    highscore: 0,
+    villains
+  }
+
+  // i need to add a state = score, villains clicked??
   render() {
+
     return (
+
       <wrapper>
 
         <nav className="navbar sticky-top navbar-light bg-primary">
           <h2 className="navbar-brand justify-content-start">Clicky Game</h2>
           <h2 className="navbar-brand justify-content-center">Click any image to begin!</h2>
           <h2 className="navbar-brand justify-content-end">Score: <span id="score"></span>| Top Score: <span id="tScore"></span></h2>
-          {/* <score score={this.state.score} highScore={this.state.highScore} /> */}
+
         </nav>
 
         <div className="App">
@@ -26,16 +34,24 @@ class App extends Component {
           </header>
 
           <div className="row">
-            <div className="col-md-3">
 
+            <div className="col-md-3">
+              {this.state.villains.map(villains => {
+                return <VillainCard
+                  id={villains.id}
+                  key={villains.id}
+                  image={villains.image}
+                  handleClick={this.handleClick} />
+                }
+                
+              )}
 
             </div>
-
           </div>
-
         </div>
 
-      </wrapper>
+
+      </wrapper >
     );
   }
 }

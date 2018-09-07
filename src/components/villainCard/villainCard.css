@@ -1,9 +1,11 @@
-.clickItem {
+img {
   
     background-size: cover;
+    display: inline-table;
     background-position: 50%;
-    height: 170px;
-    width: 170px;
+    width: 24%;
+    height: 24%;
+    max-width: 174px;
     margin: 8px 25px;
     border: 5px solid #f1f1f1;
     border-radius: 3px;

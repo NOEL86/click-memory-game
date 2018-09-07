@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import villainCard from "../villainCard";
-import score from '../Scores';
-import images from "../../img.json";
+import Scores from '../Scores';
+import images from "../../Villains.json";
 
 
 class Game extends Component {
 
-    state = {
-        score: 0,
-        highscore: 0,
-        images
-    }
 
     componentDidMount() {
         this.setState({ images: this.shuffle(this.state.images) });
     }
 
-    shuffle = (images) => {
+    shuffleVillains = (images) => {
         let i = images.length - 1;
         while (i > 0) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -28,28 +23,10 @@ class Game extends Component {
         return images;
     }
 
-    // correctGuess = (guess) => {
-    //     const { score, highScore } = this.state
-    //     const newScore = score + 1;
-    //     const newHighScore = newScore > highScore ? newScore : highScore;
-    //     this.setState({
-    //         images: this.shuffle(guess),
-    //         score: newScore,
-    //         highScore: newHighScore
-    //     });
-    // }
-
-    // incorrectGuess = (guess) => {
-    //     this.setState({
-    //         images: this.resetImages(guess),
-    //         score: 0
-    //     })
-    // }
-
     resetImages = (newData) => {
-        const resetData = newData.map((item) => {
-            item.clicked = false;
-            return item
+        const resetData = newData.map(villain => {
+            villain.clicked = false;
+            return villain
         })
         return this.shuffle(resetData)
     }
@@ -57,20 +34,19 @@ class Game extends Component {
     handleClick = (id) => {
         console.log("this was clicked");
         let guessedCorrect = false;
-        const newData = this.state.images.map((item, i) => {
-            const newItem = item
-            if (item.id === id) {
-                if (!item.clicked) {
-                    newItem.clicked = true;
+        const newData = this.state.images.map(villain => {
+            const newVillain = villain
+            if (villain.id === id) {
+                if (!villain.clicked) {
+                    newVillain.clicked = true;
                     guessedCorrect = true
 
                 }
             }
-            return newItem
+            return newVillain
         })
         guessedCorrect ? this.correctGuess(newData) : this.incorrectGuess(newData)
     }
-
 
 }
 
