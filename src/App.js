@@ -19,7 +19,7 @@ class App extends Component {
 
     return (
 
-      <wrapper>
+      <container>
 
         <nav className="navbar sticky-top navbar-light bg-primary">
           <h2 className="navbar-brand justify-content-start">Clicky Game</h2>
@@ -33,25 +33,22 @@ class App extends Component {
             <h1 className="App-title">Let's Play the Disney Villain Clicky Game!</h1>
           </header>
 
-          <div id="body" className="row">
+          <div id="body" col="md-12">
+            {this.state.villains.map(villains => {
+              return <VillainCard
+                id={villains.id}
+                key={villains.id}
+                image={villains.image}
+                handleClick={this.handleClick} />
+            }
 
-            <div className="col-md-12">
-              {this.state.villains.map(villains => {
-                return <VillainCard
-                  id={villains.id}
-                  key={villains.id}
-                  image={villains.image}
-                  handleClick={this.handleClick} />
-                }
-                
-              )}
-
-            </div>
+            )}
           </div>
+
         </div>
 
 
-      </wrapper >
+      </container >
     );
   }
 }

@@ -1,7 +1,12 @@
 import React from 'react';
+import Game from "../Game";
 
 // class Scores extends Component {
+// state = {
+//     score: 0,
+//     highscore: 0
 
+// }
 // correctGuess = (guess) => {
 //     const { score, highScore } = this.state
 //     const newScore = score + 1;
