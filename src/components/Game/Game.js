@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import villainCard from "../villainCard";
-import Scores from '../Scores';
 import villains from "../../Villains.json";
 
 
 class Game extends Component {
 
     state = {
-
         villains
     }
 
@@ -27,13 +24,10 @@ class Game extends Component {
         return villains;
     }
 
-    resetvillains = (newData) => {
-        const resetData = newData.map(villain => {
-            villain.clicked = false;
-            return villain
-        })
-        return this.shuffleVillains(resetData)
-    }
+    //Handle click should take in the item's id and pass that through the function as the item clicked
+    //it should determine if the item has already been clicked 
+    //it should let the user know whether they guessed correctly or incorrectly
+    //it should shuffle the villain cards again after the click
 
     handleClick = (id) => {
         console.log("this was clicked");

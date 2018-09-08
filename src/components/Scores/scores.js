@@ -12,7 +12,7 @@ import Game from "../Game";
 //     const newScore = score + 1;
 //     const newHighScore = newScore > highScore ? newScore : highScore;
 //     this.setState({
-//         images: this.shuffle(guess),
+//         villains: this.shuffle(guess),
 //         score: newScore,
 //         highScore: newHighScore
 //     });
@@ -20,7 +20,7 @@ import Game from "../Game";
 
 // incorrectGuess = (guess) => {
 //     this.setState({
-//         images: this.resetImages(guess),
+//         villains: this.resetImages(guess),
 //         score: 0
 //     })
 // }

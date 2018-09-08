@@ -4,6 +4,8 @@ import Scores from './components/Scores';
 import './App.css';
 import VillainCard from './components/villainCard';
 import villains from "./Villains.json";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 
 
 class App extends Component {
@@ -20,33 +22,21 @@ class App extends Component {
     return (
 
       <container>
+        {/* <Game /> I Need to get this file to read my game app too*/}
+        <NavBar/>
+        <Header />
 
-        <nav className="navbar sticky-top navbar-light bg-primary">
-          <h2 className="navbar-brand justify-content-start">Clicky Game</h2>
-          <h2 className="navbar-brand justify-content-center">Click any image to begin!</h2>
-          <h2 className="navbar-brand justify-content-end">Score: <span id="score"></span>| Top Score: <span id="tScore"></span></h2>
+        <div id="body" col="md-12">
+          {this.state.villains.map(villains => {
+            return <VillainCard
+              id={villains.id}
+              key={villains.id}
+              image={villains.image}
+              handleClick={this.handleClick} />
+          }
 
-        </nav>
-
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Let's Play the Disney Villain Clicky Game!</h1>
-          </header>
-
-          <div id="body" col="md-12">
-            {this.state.villains.map(villains => {
-              return <VillainCard
-                id={villains.id}
-                key={villains.id}
-                image={villains.image}
-                handleClick={this.handleClick} />
-            }
-
-            )}
-          </div>
-
+          )}
         </div>
-
 
       </container >
     );
