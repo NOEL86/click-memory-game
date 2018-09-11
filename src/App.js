@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   handleClick = (id) => {
-    var shuffledVillains = this.shuffleVillains(this.state.villains);
+    let shuffledVillains = this.shuffleVillains(this.state.villains);
 
     this.findAndUpdateVillains(shuffledVillains, id);
   }
@@ -30,20 +30,21 @@ class App extends Component {
     return array
   }
 
-  // updateHighScore = () => {
-  //   if (this.state.score > this.state.highscore) {
-  //     this.setState({
-  //       highscore: this.state.score
-  //     })
+  updateHighScore = () => {
+    if (this.state.score > this.state.highscore) {
+      this.setState({
+        highscore: this.state.score
+      })
 
-  //   } else {
-  //     console.log(highscore);
+    } else {
+      console.log(this.state.highscore);
 
-  //   }
-  // }
+    }
+  }
 
   findAndUpdateVillains = (array, id) => {
     console.log(id);
+
 
     let updatedArray = [];
     let doubleClicked = false;
@@ -55,7 +56,7 @@ class App extends Component {
           array[i].clicked = true;
           updatedArray.push(array[i])
         } else {
-          console.log("You clicked this one already");
+          alert("You clicked this one already!");
           doubleClicked = true;
           updatedArray.push(array[i]);
         }
@@ -63,10 +64,12 @@ class App extends Component {
         updatedArray.push(array[i])
       }
     }
+
     if (doubleClicked === false) {
       this.setState({
         villains: updatedArray,
-        score: ++this.state.score,
+        score: this.state.score + 1,
+
         // updateHighScore()
       })
 
@@ -174,7 +177,6 @@ class App extends Component {
 
       });
 
-
     }
 
   }
@@ -184,7 +186,7 @@ class App extends Component {
 
     return (
 
-      <container>
+      <div>
 
         <NavBar />
         <Header />
@@ -201,7 +203,7 @@ class App extends Component {
           )}
         </div>
 
-      </container >
+      </div>
     );
   }
 }

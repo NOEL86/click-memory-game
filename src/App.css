@@ -11,7 +11,10 @@
 }
 
 #body {
-  background-color: rgb(40, 84, 165)
+  background-color: rgb(40, 84, 165);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 /* @keyframes App-logo-spin {
