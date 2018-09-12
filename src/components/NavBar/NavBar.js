@@ -9,7 +9,6 @@ const NavBar = props => (
         <h2 className="navbar-brand">Score: <span>{props.score}</span> | Top Score: <span>{props.highscore}</span></h2>
 
     </nav >
-
 )
 
 export default NavBar;
