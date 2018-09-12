@@ -31,21 +31,21 @@ class App extends Component {
   }
 
   updateHighScore = () => {
-    if (this.state.score > this.state.highscore) {
+    let highscore = this.state.highscore;
+    let score = this.state.score;
+    if (score > highscore) {
       this.setState({
         highscore: this.state.score
       })
 
     } else {
-      console.log(this.state.highscore);
+      console.log(highscore);
 
     }
   }
 
   findAndUpdateVillains = (array, id) => {
     console.log(id);
-
-
     let updatedArray = [];
     let doubleClicked = false;
 
@@ -69,12 +69,10 @@ class App extends Component {
       this.setState({
         villains: updatedArray,
         score: this.state.score + 1,
-
-        // updateHighScore()
       })
 
     } else {
-      // updateHighScore()
+      this.updateHighScore()
       this.setState({
         villains: [{
           "id": 1,
@@ -188,7 +186,9 @@ class App extends Component {
 
       <div>
 
-        <NavBar />
+        <NavBar
+          score={this.state.score}
+          highscore={this.state.highscore} />
         <Header />
 
         <div id="body" col="md-12">
