@@ -32,7 +32,9 @@
     .App-header {
        margin: 0;
        padding-bottom: 0;
-       /* padding-top: 5px; */
+       background-size: 30%;
+       background-origin: content-box;
+       max-height: 100%;
     }
     #disneyLogo {
        margin-top: 25%;
