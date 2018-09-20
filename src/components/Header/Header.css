@@ -23,6 +23,18 @@
 }
 
 #disneyLogo {
-    display: block;
+    display: inline-block;
     text-align: center;
+  
+}
+
+@media screen and (max-width: 415px) {
+    .App-header {
+       margin: 0;
+       padding-bottom: 0;
+       /* padding-top: 5px; */
+    }
+    #disneyLogo {
+       margin-top: 25%;
+    }
 }
